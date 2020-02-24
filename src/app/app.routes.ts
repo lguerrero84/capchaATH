@@ -6,4 +6,5 @@ const APP_ROUTES: Routes = [
     {path: '**', pathMatch: 'full', redirectTo: 'CONPLAN' }
 ];
 
+// tslint:disable-next-line: eofline
 export const APP_ROUTING = RouterModule.forRoot(APP_ROUTES);
