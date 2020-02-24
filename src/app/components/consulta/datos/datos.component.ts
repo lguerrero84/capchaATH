@@ -23,22 +23,19 @@ export class DatosComponent implements OnInit {
 
   @Output() consultaPlanilla: EventEmitter<string>;
 
-  forma: FormGroup;
+  forma: FormControl;
 
   constructor( private planillaPila: PilaServices, private fb: FormBuilder ) {
       this.crearFormulario();
       this.input.bankId = '00010524',
       this.input.channel = '15',
       this.input.clientDt = new Date().toString() ,
-      this.input.rqUID = '1111',
-      this.input.billNumber = '8605979883'
-      
+      this.input.rqUID = '1111'
+     
    }
 
    crearFormulario() {
-     this.forma = this.fb.group({
-       planilla: ['', [Validators.required, Validators.maxLength(10)]]
-     });
+     this.forma = new FormControl('', [Validators.required, Validators.maxLength(10)]);
    }
 
   ngOnInit() {
@@ -48,7 +45,8 @@ export class DatosComponent implements OnInit {
   executeImportantAction()  {
     console.log('prueba servicio');
     console.log(this.date);
-
+    console.log(this.forma);
+    this.input.billNumber = this.forma.value;
     const response = grecaptcha.getResponse();
     if (response.length === 0) {
     this.errormsg = 'Recaptcha not verified. Please try again!';

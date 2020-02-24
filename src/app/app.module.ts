@@ -12,7 +12,7 @@ import { AppComponent } from './app.component';
 import { LogoComponent } from './components/shared/logo/logo.component';
 import { DatosComponent } from './components/consulta/datos/datos.component';
 import { ButtomsubmitComponent } from './components/footer/buttomsubmit/buttomsubmit.component';
-
+import {APP_ROUTING} from './app.routes';
 //Servicio
 
 import {PilaServices } from './services/InformationPila.services';
@@ -35,7 +35,8 @@ import { DatosplanillaComponent } from './components/consulta/datosplanilla/dato
     RecaptchaModule,
     FormsModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    APP_ROUTING
   ],
   providers: [
     { provide: RECAPTCHA_V3_SITE_KEY, useValue: '6Le_1NoUAAAAAMz2LGBTb-EAlMpTE0c6JNsw_5DR' },ReCaptchaV3Service,
