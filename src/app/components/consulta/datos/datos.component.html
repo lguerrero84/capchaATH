@@ -6,11 +6,11 @@
   <form [formGroup]="forma" (ngSubmit)="pruebaform()">
     <div *ngIf="!infoPila">
       <div class="form-group row">
-        <label for="inputEmail3" class="col-sm-3 texto">DIGITE EL NUMERO DE PLANILLA PILA:</label>
+        <label for="inputEmail3" class="col-sm-3 texto mt-2">DIGITE EL NUMERO DE PLANILLA PILA:</label>
 
         <div class="col-sm-3 col-md-3 col-lg-3">
           <input type="text" class="campo" size="15" formControlName="planilla" placeholder="Planilla">
-          <label class="nota">Máximo 10 dígitos</label>
+          <label class="nota ml-2">Máximo 10 dígitos</label>
         </div>
       </div>
 
