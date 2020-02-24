@@ -1,40 +1,58 @@
 <div class="row">
-
+  <div class="col-md-8">
     <div class="row">
-        <label class="col-sm-2 texto">FECHA Y HORA DE LA CONSULTA:</label>
-        <div class="col-sm-10">
-            <label>{{date | date:'yyyy/MM/dd hh:mm'}} </label>
-        </div>
 
-        <label class="col-sm-2 texto">NUMERO DE PLANILLA PILA:</label>
-        <div class="col-sm-10">
-            <label>{{infoplanilla.planilla}}</label>
-        </div>
+      <label class="col-4 texto">FECHA Y HORA DE LA CONSULTA:</label>
+      <label class="col-4 texto">{{date | date:'yyyy/MM/dd hh:mm'}}</label>
+    </div>
+  </div>
 
-        <label class="col-sm-2 texto">OPERADOR DE LA INFORMACIÓN:</label>
-        <div class="col-sm-10">
-            <label>{{infoplanilla.name}}</label>
-        </div>
+  <div class="col-md-8">
+    <div class="row">
+      <label class="col-4 texto">NUMERO DE PLANILLA PILA:</label>
+      <label class="col-4 ">{{date | date:'yyyy/MM/dd hh:mm'}}</label>
+      <!-- <label class="col-3 ">{{infoplanilla.planilla}} </label> -->
+    </div>
+  </div>
 
-        <label class="col-sm-2 texto">VALOR A PAGAR:</label>
-        <div class="col-sm-10">
-            <label>{{infoplanilla.amount}}</label>
-        </div>
-        <div class="col text-left">
-            <label>Este valor aplica para los pagos que se realicen antes de las 3:00 pm de la tarde del día de hoy.</label>
-        </div>
+  <div class="col-md-8">
+    <div class="row">
+      <label class="col-4 texto">OPERADOR DE LA INFORMACIÓN:</label>
+      <label class="col-4 texto">{{date | date:'yyyy/MM/dd hh:mm'}}</label>
+      <!-- <label class="col-3 texto">{{infoplanilla.name}}</label> -->
+    </div>
+  </div>
 
-        <div class="row">
-            <label class="col-sm-2 texto">VALOR HORARIO EXTENDIDO:</label>
-            <div class="col-sm-10">
-                <label>{{infoplanilla.amount}}</label>
-            </div>
+  <div class="col-md-8">
+    <div class="row">
+      <label class="col-4 texto">VALOR A PAGAR:</label>
+      <label class="col-4 texto">{{date | date:'yyyy/MM/dd hh:mm'}}</label>
+      <!-- <label class="col-3 texto">{{infoplanilla.amount}}</label> -->
+    </div>
+  </div>
 
-            <div class="col text-left">
-                <label>Recuerda, si el pago se realiza después de las 3:00 pm, fines de semana o festivos, el valor a pagar corresponde al Valor Horario Extendido, el cual se debitará en la fecha de pago y el abono se efectuará el día hábil siguiente.</label>
-
-            </div>
-        </div>
+  <div class="col-md-8">
+    <div class="row">
+      <label class="col-8 ">Este valor aplica para los pagos que se realicen antes de las 3:00 pm de la tarde del día de
+        hoy.</label>
 
     </div>
+  </div>
+
+  <div class="col-md-8">
+    <div class="row">
+      <label class="col-3 texto">VALOR HORARIO EXTENDIDO:</label>
+      <label class="col-3 texto">{{date | date:'yyyy/MM/dd hh:mm'}}</label>
+      <!-- <label class="col-3 texto">{{infoplanilla.amount}}</label> -->
+    </div>
+  </div>
+  <div class="col-md-8">
+    <div class="row">
+      <label class="col-8 texto">Recuerda, si el pago se realiza después de las 3:00 pm, fines de semana o festivos, el valor
+        a pagar corresponde al Valor Horario Extendido, el cual se debitará en la fecha de pago y el abono se efectuará
+        el día hábil siguiente.</label>
+
+    </div>
+  </div>
 </div>
+

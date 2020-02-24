@@ -1,3 +1,10 @@
+.imagen{
+    
+    margin-left: 6%;
+    margin-top: 1%;
+
+}
+
 .titulo {
     font-family: Verdana, Arial, Helvetica, sans-serif;
     font-size: 11pt;
@@ -7,16 +14,18 @@
 
 .texto {
     font-family: Verdana, Arial, Helvetica, sans-serif;
-    font-size: 8pt;
+    font-size: 9pt;
     color: #333333;
     font-weight: bold;
+    /* margin-left: -12px; */
 }
 
 .fecha {
     font-family: Arial;
-    font-size: 8pt;
+    font-size: 9pt;
     color: #000000;
     font-weight: bold;
+    margin-left: 25%;
 }
 
 .encabezadoTabla {
@@ -27,5 +36,5 @@
     font-weight: bold;
     border: 0px solid #CFE5F2;
     background-color: #CFE5F2;
-    width: 550px;
+    width: 42%;
 }
