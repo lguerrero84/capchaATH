@@ -3,6 +3,7 @@ import {DatosComponent} from './components/consulta/datos/datos.component';
 
 const APP_ROUTES: Routes = [
     {path: 'CONPLAN', component: DatosComponent},
+    {path: 'CONPLANOCC', component: DatosComponent},
     {path: '**', pathMatch: 'full', redirectTo: 'CONPLAN' }
 ];
 

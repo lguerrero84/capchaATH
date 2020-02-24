@@ -1,57 +1,53 @@
 <div class="row">
-    <div class="col-md-8">
+    <div class="col-sm-8 col-md-8 col-lg-8">
         <div class="row">
 
-            <label class="col-4 texto">FECHA Y HORA DE LA CONSULTA:</label>
-            <label class="col-4 texto">{{date | date:'yyyy/MM/dd hh:mm'}}</label>
+            <label class="col-sm-4 col-md-4 col-lg-4 texto">FECHA Y HORA DE LA CONSULTA:</label>
+            <label class="col-sm-4 col-md-4 col-lg-4 texto">{{date | date:'yyyy/MM/dd hh:mm'}}</label>
         </div>
-    </div>
 
-    <div class="col-md-8">
-        <div class="row">
-            <label class="col-4 texto">NUMERO DE PLANILLA PILA:</label>
-            <!-- <label class="col-4 ">{{date | date:'yyyy/MM/dd hh:mm'}}</label>-->
-            <label class="col-3 ">{{infoplanilla.planilla}} </label>
-        </div>
-    </div>
+        <div class="col-sm-8 col-md-8 col-lg-8">
+            <div class="row">
+                <label class="col-sm-4 col-md-4 col-lg-4 texto">NUMERO DE PLANILLA PILA:</label>
+                <label class="col-sm-4 col-md-4 col-lg-4 ">{{infoplanilla.planilla}}</label>
+                <!-- <label class="col-3 "> </label> -->
+            </div>
 
-    <div class="col-md-8">
-        <div class="row">
-            <label class="col-4 texto">OPERADOR DE LA INFORMACIÓN:</label>
-            <label class="col-4 texto">{{date | date:'yyyy/MM/dd hh:mm'}}</label>
-            <!-- <label class="col-3 texto">{{infoplanilla.name}}</label> -->
-        </div>
-    </div>
+            <div class="col-sm-8 col-md-8 col-lg-8">
+                <div class="row">
+                    <label class="col-sm-4 col-md-4 col-lg-4 texto">OPERADOR DE LA INFORMACIÓN:</label>
+                    <label class="col-sm-4 col-md-4 col-lg-4  texto">{{infoplanilla.name}}</label>
+                    <!-- <label class="col-3 texto"></label> -->
+                </div>
 
-    <div class="col-md-8">
-        <div class="row">
-            <label class="col-4 texto">VALOR A PAGAR:</label>
-            <label class="col-4 texto">{{date | date:'yyyy/MM/dd hh:mm'}}</label>
-            <!-- <label class="col-3 texto">{{infoplanilla.amount}}</label> -->
-        </div>
-    </div>
+                <div class="col-sm-8 col-md-8 col-lg-8">
+                    <div class="row">
+                        <label class="col-sm-4 col-md-4 col-lg-4  texto">VALOR A PAGAR:</label>
+                        <label class="col-sm-4 col-md-4 col-lg-4 texto">{{infoplanilla.amount}}</label>
+                        <!-- <label class="col-3 texto"></label> -->
+                    </div>
 
-    <div class="col-md-8">
-        <div class="row">
-            <label class="col-8 ">Este valor aplica para los pagos que se realicen antes de las 3:00 pm de la tarde del día de
+                    <div class="col-sm-8 col-md-8 col-lg-8">
+                        <div class="row">
+                            <label class="col-sm-8 col-md-8 col-lg-8">Este valor aplica para los pagos que se realicen antes de las 3:00 pm de la tarde del día de
         hoy.</label>
 
-        </div>
-    </div>
+                        </div>
+                    </div>
 
-    <div class="col-md-8">
-        <div class="row">
-            <label class="col-3 texto">VALOR HORARIO EXTENDIDO:</label>
-            <label class="col-3 texto">{{date | date:'yyyy/MM/dd hh:mm'}}</label>
-            <!-- <label class="col-3 texto">{{infoplanilla.amount}}</label> -->
-        </div>
-    </div>
-    <div class="col-md-8">
-        <div class="row">
-            <label class="col-8 texto">Recuerda, si el pago se realiza después de las 3:00 pm, fines de semana o festivos, el valor
+                    <div class="col-sm-8 col-md-8 col-lg-8">
+                        <div class="row">
+                            <label class="col-sm-3 col-md-3 col-lg-3 texto">VALOR HORARIO EXTENDIDO:</label>
+                            <label class="col-sm-3 col-md-3 col-lg-3 texto">{{infoplanilla.amount}}</label>
+                            <!-- <label class="col-3 texto"></label> -->
+                        </div>
+                    </div>
+                    <div class="col-sm-8 col-md-8 col-lg-8">
+                        <div class="row">
+                            <label class="col-sm-8 col-md-8 col-lg-8 texto">Recuerda, si el pago se realiza después de las 3:00 pm, fines de semana o festivos, el valor
         a pagar corresponde al Valor Horario Extendido, el cual se debitará en la fecha de pago y el abono se efectuará
         el día hábil siguiente.</label>
 
-        </div>
-    </div>
-</div>
+                        </div>
+                    </div>
+                </div>
