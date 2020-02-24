@@ -19,3 +19,26 @@
     font-weight: bold;
     margin-top: 8px;
 }
+
+
+@media (min-width: 1200px) { 
+
+    .nota {
+        font-family: Verdana, Arial, Helvetica, sans-serif;
+        font-size: 8pt;
+        color: #333333;
+        font-style: italic;
+        margin-left: 3%;
+    }
+    
+    .texto {
+        font-family: Verdana, Arial, Helvetica, sans-serif;
+        font-size: 8pt;
+        color: #333333;
+        font-weight: bold;
+        margin-top: 8px;
+    }
+    
+
+    
+}
