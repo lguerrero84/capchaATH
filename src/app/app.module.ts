@@ -18,6 +18,7 @@ import {APP_ROUTING} from './app.routes';
 import {PilaServices } from './services/InformationPila.services';
 import { RecaptchaComponent } from './components/consulta/recaptcha/recaptcha.component';
 import { DatosplanillaComponent } from './components/consulta/datosplanilla/datosplanilla.component';
+import { LogoOccidenteComponent } from './components/shared/logo/logo-occidente/logo-occidente.component';
 
 
 
@@ -28,7 +29,8 @@ import { DatosplanillaComponent } from './components/consulta/datosplanilla/dato
     DatosComponent,
     ButtomsubmitComponent,
     RecaptchaComponent,
-    DatosplanillaComponent
+    DatosplanillaComponent,
+    LogoOccidenteComponent
   ],
   imports: [
     BrowserModule,
