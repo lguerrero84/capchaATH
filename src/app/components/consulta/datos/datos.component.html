@@ -1,0 +1,41 @@
+<form [formGroup]="forma" (ngSubmit)="pruebaform()">
+
+    <div *ngIf="!infoPila">
+        <div class="form-group row">
+            <label for="inputEmail3" class="col-sm-2 texto">DIGITE EL NUMERO DE PLANILLA PILA:</label>
+            <div class="col-sm-10">
+                <input type="text" class="campo" size="15" formControlName="planilla" placeholder="planilla">
+                <label class="nota">Máximo 10 dígitos</label>
+            </div>
+        </div>
+
+        <div class="form-group row">
+
+            <div class="col-sm-10">
+                <div #recaptcha ng-model="g-recaptcha-response"></div>
+            </div>
+        </div>
+    </div>
+
+    <app-datosplanilla *ngIf="infoPila" [infoplanilla]="infoPlanilla"></app-datosplanilla>
+
+    <div class="row">
+        <div class="row">
+            <div class="col" *ngIf="!infoPila">
+                <img (click)=" executeImportantAction()" src="assets/img/botonConsultar4.jpg">
+            </div>
+            <div class="col" *ngIf="infoPila">
+                <img (click)=" executeImportantAction()" src="assets/img/botonImprimir.jpg">
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col">
+                <img (click)="goToUrl()" src="assets/img/botonTerminar.jpg">
+            </div>
+        </div>
+
+    </div>
+
+
+</form>

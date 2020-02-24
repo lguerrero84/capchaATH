@@ -1,0 +1,19 @@
+.campo {
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    font-size: 8pt;
+    color: #333333;
+}
+
+.nota {
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    font-size: 7pt;
+    color: #333333;
+    font-style: italic;
+}
+
+.texto {
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    font-size: 8pt;
+    color: #333333;
+    font-weight: bold;
+}
