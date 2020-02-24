@@ -1,9 +1,4 @@
-.imagen{
-    
-    margin-left: 6%;
-    margin-top: 1%;
 
-}
 
 .titulo {
     font-family: Verdana, Arial, Helvetica, sans-serif;
@@ -36,5 +31,6 @@
     font-weight: bold;
     border: 0px solid #CFE5F2;
     background-color: #CFE5F2;
-    width: 42%;
+    /* width: auto; */
 }
+
