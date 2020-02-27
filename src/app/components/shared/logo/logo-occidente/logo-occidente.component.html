@@ -1,37 +1,39 @@
-<div class="col-12">
+<div id="planillaCompleta">
+    <div class="col-12">
 
-    <div class="row">
-        <div class="col-sm-8 col-md-8 col-lg-9 text-center mt-2">
-            <img src="assets/img/LOGOBANCOOccidente.GIF" class="imagen">
+        <div class="row">
+            <div class="col-sm-8 col-md-8 col-lg-9 text-center mt-2">
+                <img src="assets/img/LOGOBANCOOccidente.GIF" class="imagen">
+            </div>
         </div>
-    </div>
 
-    <div class="row">
-        <div class="col-sm-6 col-md-6 col-lg-6">
-            <label class="titulo">Consulta de planillas</label>
+        <div class="row">
+            <div class="col-sm-6 col-md-6 col-lg-6">
+                <label class="titulo">Consulta de planillas</label>
+            </div>
         </div>
-    </div>
 
-    <div class="row">
-        <div class="col-sm-6 col-md-6 col-lg-6">
-            <label>Esta consulta te permite confirmar el número de planilla y el valor que puedes pagar en 
+        <div class="row">
+            <div class="col-sm-6 col-md-6 col-lg-6">
+                <label>Esta consulta te permite confirmar el número de planilla y el valor que puedes pagar en 
           las oficinas del Banco AV Villas.</label>
-        </div>
-    </div>
-
-    <div class="row">
-        <div class="col-md-3">
-            <label class="texto">Fecha de Consulta</label>
+            </div>
         </div>
 
-        <div class="col-md-3 ">
-            <label class="fecha"> {{date | date:'MMMM dd, yyyy hh:mm aaa'}} </label>
+        <div class="row">
+            <div class="col-md-3">
+                <label class="texto">Fecha de Consulta</label>
+            </div>
+
+            <div class="col-md-3 ">
+                <label class="fecha float-right"> {{date | date:'MMMM dd, yyyy hh:mm aaa'}} </label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-6 col-md-6 col-lg-6">
+                <label class="col-md-3 col-lg-12 encabezadoTabla ">Información Requerida</label>
+            </div>
         </div>
     </div>
-    <div class="row">
-        <div class="col-sm-6 col-md-6 col-lg-6">
-            <label class="col-md-3 col-lg-12 encabezadoTabla ">Información Requerida</label>
-        </div>
-    </div>
+    <app-datos [conplanOccidente]="conplanOccidente"></app-datos>
 </div>
-<app-datos></app-datos>

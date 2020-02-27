@@ -33,7 +33,7 @@ export class RecaptchaComponent implements OnInit {
       var js, fjs = d.getElementsByTagName(s)[0];
       if (d.getElementById(id)) { obj.renderReCaptch(); return;}
       js = d.createElement(s); js.id = id;
-      js.src = "https://www.google.com/recaptcha/api.js?onload=grecaptchaCallback&amp;render=explicit";
+      js.src = "http://www.google.com/recaptcha/api.js?onload=grecaptchaCallback&amp;render=explicit";
       fjs.parentNode.insertBefore(js, fjs);
     }(document, 'script', 'recaptcha-jssdk', this));
  

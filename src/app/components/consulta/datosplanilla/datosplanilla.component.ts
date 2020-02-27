@@ -8,6 +8,7 @@ import { PilaInformationModel } from 'src/app/model/PilaInformation.model';
 })
 export class DatosplanillaComponent implements OnInit {
   public date = new Date();
+  
   @Input() infoplanilla: PilaInformationModel = new PilaInformationModel();
   constructor() { }
 

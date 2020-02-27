@@ -7,7 +7,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LogoOccidenteComponent implements OnInit {
   public date=new Date();
-  constructor() { }
+  conplanOccidente:boolean;
+  
+  constructor() { 
+    this.conplanOccidente=true;
+  }
 
   ngOnInit() {
   }

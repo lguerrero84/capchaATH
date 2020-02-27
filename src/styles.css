@@ -1,1 +1,50 @@
-/* You can add global styles to this file, and also import other style files */
+.campo {
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    font-size: 8pt;
+    color: #333333;
+}
+
+.nota {
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    font-size: 8pt;
+    color: #333333;
+    font-style: italic;
+}
+
+.botones {
+    padding: 0;
+    border: none;
+    background: none;
+}
+
+.titulo {
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    font-size: 11pt;
+    font-weight: bold;
+    color: #CC0000;
+}
+
+.texto {
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    font-size: 9pt;
+    color: #333333;
+    font-weight: bold;
+    /* margin-left: -12px; */
+}
+
+.fecha {
+    font-family: Arial;
+    font-size: 9pt;
+    color: #000000;
+    font-weight: bold;
+}
+
+.encabezadoTablaVillas {
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    font-size: 10pt;
+    color: #003366;
+    text-align: center;
+    font-weight: bold;
+    border: 0px solid #CFE5F2;
+    background-color: #CFE5F2;
+}

@@ -1,38 +1,45 @@
 <div class="col-sm-12 col-md-12 col-lg-12">
 
-    <form (ngSubmit)="pruebaform()">
-
+    <form>
         <div *ngIf="!infoPila">
             <div class="form-group row">
-                <label for="inputEmail3" class="col-sm-2 texto">DIGITE EL NUMERO DE PLANILLA PILA:</label>
-                <div class="col-sm-10">
-                    <input type="text" class="campo" size="15" [formControl]="forma" placeholder="planilla">
-                    <label class="nota">Máximo 10 dígitos</label>
+                <label for="inputEmail3" class="col-sm-3 texto mt-2">DIGITE EL NUMERO DE PLANILLA PILA:</label>
+
+                <div class="col-sm-3 col-md-3 col-lg-3">
+                    <input type="text" class="campo" size="15" [formControl]="forma" placeholder="Planilla">
+                    <label class="nota ml-2">Máximo 10 dígitos</label>
+                </div>
+                <div class="col-sm-10 col-md-10 col-lg-10" *ngIf="!errorPila">
+                    <div #recaptcha ng-model="g-recaptcha-response"></div>
                 </div>
             </div>
         </div>
-
-
-        <div *ngIf="!infoPila" class="form-group row">
-
-
-            <div class="col-sm-10 col-md-10 col-lg-10">
-                <div #recaptcha ng-model="g-recaptcha-response"></div>
-            </div>
-        </div>
-
-
         <app-datosplanilla *ngIf="infoPila" [infoplanilla]="infoPlanilla"></app-datosplanilla>
+        <app-error *ngIf="errorPila"></app-error>
         <div class="row">
-            <div class="col-sm-3 col-md-3 col-lg-3 text-center" *ngIf="!infoPila">
-                <img (click)=" executeImportantAction()" src="assets/img/botonConsultar4.jpg">
+
+            <div class="col-sm-3 col-md-3 col-lg-3 text-center" *ngIf="!infoPila && !errorPila">
+                <button [disabled]="false" class="botones" (click)=" executeImportantAction()">
+                    <img  src="assets/img/botonConsultar4.jpg">
+                </button>
+
             </div>
-            <div class="col-sm-3 col-md-3 col-lg-3 text-center" *ngIf="infoPila">
-                <img (click)=" executeImportantAction()" src="assets/img/botonImprimir.jpg">
+            <div class="col-sm-3 col-md-3 col-lg-3 text-center" *ngIf="infoPila || errorPila ">
+
+                <button class="botones" printTitle="PrintVoucher" [useExistingCss]="true" printSectionId="planillaCompleta" ngxPrint>
+                    <img src="assets/img/botonImprimir.jpg">
+                </button>
             </div>
 
-            <div class="col-sm-3 col-md-3 col-lg-3">
-                <img (click)="goToUrl()" src="assets/img/botonTerminar.jpg">
+            <div class="col-sm-3 col-md-3 col-lg-3" *ngIf="!errorPila">
+                <button class="botones" (click)="goToUrl()">
+                    <img  src="assets/img/botonTerminar.jpg">
+                </button>
+            </div>
+            <div class="col-sm-3 col-md-3 col-lg-3" *ngIf="errorPila">
+                <button class="botones" (click)="goToHome()">
+                    <img  src="assets/img/botonCancelar.jpg">
+                </button>
             </div>
         </div>
     </form>

@@ -2,7 +2,7 @@
     font-family: Verdana, Arial, Helvetica, sans-serif;
     font-size: 11pt;
     font-weight: bold;
-    color: #000000;
+    color: #162A45;
 }
 
 .texto {
@@ -18,13 +18,13 @@
     font-size: 9pt;
     color: #000000;
     font-weight: bold;
-    margin-left: 25%;
 }
 
 .encabezadoTabla {
     font-family: Verdana, Arial, Helvetica, sans-serif;
     font-size: 10pt;
-    color: #162A45;
+    color: #003366;
+    text-align: center;
     font-weight: bold;
     border: 0px solid #008ED0;
     background-color: #008ED0;

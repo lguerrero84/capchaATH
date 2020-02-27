@@ -1,9 +1,13 @@
-import { Component, OnInit , Output, EventEmitter , ElementRef, ViewChild} from '@angular/core';
+import { Component, OnInit , Output, EventEmitter , ElementRef, ViewChild, Input} from '@angular/core';
 import { StatusModel } from '../../../model/status.model';
-import {FormGroup, FormControl, Validators, FormBuilder} from '@angular/forms';
+import { FormControl, Validators, FormBuilder} from '@angular/forms';
 import {PilaServices} from '../../../services/InformationPila.services';
 import {FormPilaRq} from '../../../model/fromPilaRq';
 import { PilaInformationModel } from '../../../model/PilaInformation.model';
+
+
+
+
 declare var grecaptcha: any;
 @Component({
   selector: 'app-datos',
@@ -13,19 +17,25 @@ declare var grecaptcha: any;
 export class DatosComponent implements OnInit {
 
   @ViewChild('recaptcha', {static: false }) recaptchaElement: ElementRef;
+  @Input()conplanOccidente: boolean;
+
   errormsg: string;
   input: FormPilaRq = new FormPilaRq();
   repuesta: StatusModel = new StatusModel();
   infoPlanilla: PilaInformationModel = new PilaInformationModel();
   infoPila: boolean;
   infoform: boolean=true;
+  errorPila: boolean;
   public date=new Date();
+  
 
-  @Output() consultaPlanilla: EventEmitter<string>;
+  
+  
 
   forma: FormControl;
 
-  constructor( private planillaPila: PilaServices, private fb: FormBuilder ) {
+  constructor( private planillaPila: PilaServices, private fb: FormBuilder) {
+     
       this.crearFormulario();
       this.input.bankId = '00010524',
       this.input.channel = '15',
@@ -36,6 +46,7 @@ export class DatosComponent implements OnInit {
 
    crearFormulario() {
      this.forma = new FormControl('', [Validators.required, Validators.maxLength(10)]);
+     
    }
 
   ngOnInit() {
@@ -63,29 +74,49 @@ export class DatosComponent implements OnInit {
             this.repuesta.StatusDesc = data.mstatus.statusDesc;
             this.repuesta.InvoiceNum = data.invoiceNum;
             this.repuesta.NIE = data.nie;
-            this.infoPlanilla.fechaCorte = data.mPayInformation.fechaCorte;
-            this.infoPlanilla.fechaRadicacion = data.mPayInformation.fechaRadicacion;
-            this.infoPlanilla.fechaVencimiento = data.mPayInformation.fechaVencimiento;
-            this.infoPlanilla.fechaPagoOportuno = data.mPayInformation.fechaPagoOportuno;
-            this.infoPlanilla.convenio = data.mPayInformation.convenio;
-            this.infoPlanilla.amount = data.mPayInformation.valor;
-            this.infoPlanilla.amountType = data.mPayInformation.tipoValor;
-            this.infoPlanilla.status = data.mPayInformation.estado;
-            this.infoPlanilla.name = data.name;
-            this.infoPlanilla.planilla = data.invoiceNum;
-            this.repuesta.planilla = this.infoPlanilla;
-          });
-          if ( this.infoPlanilla != null)
+            if(data.mPayInformation!=null)
             {
-              console.log("entro aca");
-              this.infoPila = true;
+              this.infoPlanilla.fechaCorte = data.mPayInformation.fechaCorte;
+              this.infoPlanilla.fechaRadicacion = data.mPayInformation.fechaRadicacion;
+              this.infoPlanilla.fechaVencimiento = data.mPayInformation.fechaVencimiento;
+              this.infoPlanilla.fechaPagoOportuno = data.mPayInformation.fechaPagoOportuno;
+              this.infoPlanilla.convenio = data.mPayInformation.convenio;
+              this.infoPlanilla.amount = data.mPayInformation.valor;
+              this.infoPlanilla.amountType = data.mPayInformation.tipoValor;
+              this.infoPlanilla.status = data.mPayInformation.estado;
+              this.infoPlanilla.name = data.name;
+              this.infoPlanilla.planilla = data.invoiceNum;
+              this.repuesta.planilla = this.infoPlanilla;
             }
+            
+            if ( this.repuesta.Severity === "INFO" && this.infoPlanilla != null)
+            {
+              this.infoPila = true;
+            } else{
+              this.errorPila = true;
+            }
+
+          });
+          
+       
+       
 
    }
  }
 
   goToUrl(): void {
-    window.location.assign('https://www.avvillas.com.co/');
+    
+    if(!this.conplanOccidente)
+    {
+      window.location.assign('https://www.avvillas.com.co/');
+    }else{
+      window.location.assign('https://www.bancodeoccidente.com.co/');
+    }
+    
+}
+
+goToHome():void{
+ window.location.reload();
 }
 
 renderReCaptch() {
@@ -110,7 +141,7 @@ addRecaptchaScript() {
     var js, fjs = d.getElementsByTagName(s)[0];
     if (d.getElementById(id)) { obj.renderReCaptch(); return;}
     js = d.createElement(s); js.id = id;
-    js.src = "https://www.google.com/recaptcha/api.js?onload=grecaptchaCallback&amp;render=explicit";
+    js.src = "http://www.google.com/recaptcha/api.js?onload=grecaptchaCallback&amp;render=explicit";
     fjs.parentNode.insertBefore(js, fjs);
   }(document, 'script', 'recaptcha-jssdk', this));
 
